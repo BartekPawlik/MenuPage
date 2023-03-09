@@ -1,0 +1,26 @@
+
+dodajemy tablice a w niej informacje o każdym itemie nazwa itp 
+
+
+implementacja kontenera na itemy .secion-center query
+
+odpalamy funkcje DOMContentLoaded
+w której  mapujemy itemy z tablicy za pomoca 
+let displayMenu menu.map(function(item){
+
+zwracamy informacje za pomoca return
+i dodajemy  cały artukuł
+na przykład
+
+  <img src="${item.jpg}" alt="">
+dolara item i wartos z tablicy aby zmienic informacje
+
+})
+
+
+usuwamy z tablicy , za popomocą join(")
+a napstępnie wyswietlamy to na stronie
+sectionCenter.innerHtml = displayMenu
+
+refactor umieszcznie całej funckci w innej funkcji i uporządkowanie kodu
+        
