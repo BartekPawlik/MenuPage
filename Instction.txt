@@ -22,5 +22,46 @@ usuwamy z tablicy , za popomocą join(")
 a napstępnie wyswietlamy to na stronie
 sectionCenter.innerHtml = displayMenu
 
-refactor umieszcznie całej funckci w innej funkcji i uporządkowanie kodu
+refactor umieszcznie całej funckci w innej funkcji i uporządkowanie kodu.
         
+odpalam foreach dla każdgo buttona i tworze addEventListener 
+
+w funkcji ustawiam 2 wartości
+category = e.currentTarget.dataset.id  otrzymujemy daną kategorie po click
+menuCategory = menu.filter(function(menuItem))
+
+w funkcji odpalamy if w kórym porównujemy 
+kategorie z danego buttona z kategorią w tablicy menu 
+jesli jest równe zwracamy return menu item
+
+nastepnie tworze kolejnego if w btn.addEventListener
+
+ w którym w pierwszym warunku wyswietlam category === 'all' displayMenuItems(menu)
+   else displayMenuItems(menuCategory) dziele na kategorie 
+
+
+   
+ kolejny krok jest to dodanie buttons za pomoca jS 
+
+  Commentuje buttonsy w html
+
+  tworze const categoris = menu.reduce(function)
+  w której tworze if 
+  jezeli wartosć all nie zawira item.category
+  wartość all push item.category
+  zwarcamy values
+
+
+  tworzymy wartość categoryButtons 
+ 
+  w której mapujemy butonsy wrzucająć html do returna
+
+dodajemy join
+
+ostatnim krokiem jest dodanie buttons do kontenera na buttonsy html
+
+
+
+
+
+

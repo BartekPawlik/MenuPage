@@ -78,7 +78,7 @@ const menu = [
       {
         id: 8,
         title: "American Classic",
-        category: "dinner",
+        category: "diner",
         price: 12.99,
         img: " ./img/item-8.jpeg",
         desc: `on it tumblr kickstarter thundercats migas everyday carr
@@ -117,11 +117,18 @@ const menu = [
 ];
 
 const sectionCenter = document.querySelector(".section-center")
+const btnContainer = document.querySelector(".btn-container")
 
+// Load Items
 window.addEventListener("DOMContentLoaded", function(){
-    
+    // filter items
 displayMenuItems(menu)
+displayMenuButtons()
+
+
+
 })
+
 
 
 function displayMenuItems(menuItems){
@@ -145,7 +152,38 @@ function displayMenuItems(menuItems){
     sectionCenter.innerHTML = displayMenu
 }
 
-
-
-
-
+function displayMenuButtons() {
+  const categories = menu.reduce(
+    function (values ,item) {
+      if (!values.includes(item.category)) {
+        values.push(item.category)
+      }
+      return values
+    },
+    ["all"]
+  );
+  const categoryBtns = categories.map(function(category){
+    return `<button class="filter-btn" type="button" 
+    data-id=${category}>
+    ${category}</button>`
+  }).join("");
+  btnContainer.innerHTML = categoryBtns;
+  const filterBtns = document.querySelectorAll('.filter-btn')
+  filterBtns.forEach(function(btn){
+    btn.addEventListener("click", function(e){
+    const category = e.currentTarget.dataset.id
+    const menuCategory = menu.filter(function(menuItem){
+      // console.log(menuItem.category)
+      if(menuItem.category === category) {
+        return menuItem;
+      }
+      })
+      if(category === 'all'){
+        displayMenuItems(menu)
+      } else {
+        displayMenuItems(menuCategory);
+      }
+    
+    })
+    })
+}
