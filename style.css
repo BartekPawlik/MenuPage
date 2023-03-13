@@ -107,3 +107,27 @@ header .price{
     margin-top: 7px;
     font-size: 0.8rem;
 }
+
+@media only screen and (min-width: 775px){
+  .section-center{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 774px){
+    .section-center{
+      display: grid;
+      grid-template-columns: 1fr 1fr ;
+    }
+  }
+
+
+  @media only screen and (max-width: 599px){
+    .section-center{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }

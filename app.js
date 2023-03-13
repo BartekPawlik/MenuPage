@@ -17,7 +17,7 @@ const menu = [
         price: 13.99,
         img: " ./img/item-2.jpeg",
         desc: `Ivaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang 
-        helvetica man braid jianbing. Marfa thundercats`,
+        helvetica man braid jianbing.`,
   
       },
       {
@@ -187,3 +187,4 @@ function displayMenuButtons() {
     })
     })
 }
+
